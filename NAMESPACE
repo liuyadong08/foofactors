@@ -2,3 +2,4 @@
 
 export(fbind)
 export(freq_out)
+export(reorder2)
