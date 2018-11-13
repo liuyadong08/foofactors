@@ -18,12 +18,12 @@ knitr::opts_chunk$set(
 
 ### foofactors
 
-Factors are a very useful type of variable in R, but they can also drive you nuts. This package provides some helper functions for the care and feeding of factors.
+Factors are a very useful type of variable in R, but they can also drive you nuts. This package provides some helper functions for the care and feeding of factors. This package also include a function that reorders the levels in a variable based on levels in decreasing order in another variable.
 
 ### Installation
 
 ```{r installation, eval = FALSE}
-devtools::install_github("jennybc/foofactors")
+devtools::install_github("liuyadong08/foofactors")
 ```
   
 ### Quick demo
@@ -62,3 +62,14 @@ The `freq_out()` function returns a frequency table as a well-named `tbl_df`:
 ```{r}
 freq_out(x)
 ```
+
+
+The `reorder2()` funtion returns a dataframe, and one variable of the dataframe is reordered based on the levels in decreasing order in another variable.
+```{r}
+new_mtcars <- reorder2(mtcars, mtcars$cyl, mtcars$wt)
+```
+
+```{r results = 'asis'}
+knitr::kable(new_mtcars)
+```
+
